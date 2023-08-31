@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -pam --sort=alpha
+ls -Xpam
