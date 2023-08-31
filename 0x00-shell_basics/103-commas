@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -pam --sort=alpha; echo
+ls -pam --sort=alpha
