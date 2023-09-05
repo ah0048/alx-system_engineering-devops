@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -ad */ .*/ | wc -l
+find . -mindepth 1 -type d -name '.*' -prune -o -type d -print | wc -l
