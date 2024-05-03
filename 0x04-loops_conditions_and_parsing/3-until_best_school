@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# print BEST SCHOOL ten times
+text="Best School"
+i=0
+until (( i == 10 ))
+do
+    echo "$text"
+    ((i++))
+done
