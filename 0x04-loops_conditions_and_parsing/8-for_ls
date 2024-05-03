@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# print ls -l
+for item in *;
+do
+    name=$(echo "$item" | cut -d'-' -f2-)
+    echo "$name"
+done
