@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# print BEST SCHOOL ten times
+text="Best School"
+i=0
+while (( i < 10 ))
+do
+    echo "$text"
+    if ((i == 8))
+    then
+        echo "Hi"
+    fi
+    ((i++))
+done
