@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# displays a list of currently running processes.
+while ((1))
+do
+    echo "To infinity and beyond"
+    sleep 2
+    trap echo "I am invincible!!!" SIGTERM
+done
