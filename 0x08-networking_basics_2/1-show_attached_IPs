@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# displays all avtive IPV4 IPs
+hostname -I | cut -d' ' -f1 ; hostname -i
