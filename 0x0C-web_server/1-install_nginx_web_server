@@ -2,4 +2,5 @@
 # bash script to install and configure nginx on a server
 sude apt-get -y update
 sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
 echo "Hello World!" > /var/www/html/index.html
