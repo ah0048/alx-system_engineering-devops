@@ -1,14 +1,4 @@
 #!/usr/bin/env bash
 # configures a brand new Ubuntu machine to add custom http response header
-sudo apt-get -y update
-sudo apt-get -y upgrade
-sudo apt-get -y install nginx
-sudo ufw allow 'Nginx HTTP'
-echo "Hello World" | sudo tee /var/www/html/index.html > /dev/null
-sudo sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/ permanent;' /etc/nginx/sites-available/default
-echo "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404.html > /dev/null
-sudo sed -i "46i error_page 404 /custom_404.html;" /etc/nginx/sites-available/default
-sudo service nginx restart
-
 sudo sed -i '/# Basic Settings/a\\tadd_header X-Served-By '\$hostname';' /etc/nginx/nginx.conf
 sudo service nginx reload
