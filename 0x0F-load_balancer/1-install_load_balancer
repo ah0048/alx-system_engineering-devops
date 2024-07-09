@@ -5,17 +5,18 @@ sudo apt-get -y upgrade
 sudo apt-get -y install haproxy
 sudo chown -R "$USER":"$USER" /etc/haproxy/
 sudo chown -R "$USER":"$USER" /etc/default/
-cat << EOF | sudo tee -a /etc/haproxy/haproxy.cfg
+cat << EOF | sudo tee -a /etc/haproxy/haproxy.cfg > /dev/null
 frontend http_front
-    bind *:80
-    mode http
-    default_backend servers
+        bind *:80
+        mode http
+        default_backend servers
 
 backend servers
-    mode http
-    balance roundrobin
-    server 517677-web-01 100.26.53.100:80 check
-    server 517677-web-02 34.232.72.27:80 check
+        mode http
+        balance roundrobin
+        server 517677-web-01 100.26.53.100:80 check
+        server 517677-web-02 34.232.72.27:80 check
+
 EOF
 echo "ENABLED=1" >> /etc/default/haproxy
 sudo systemctl enable haproxy.service
