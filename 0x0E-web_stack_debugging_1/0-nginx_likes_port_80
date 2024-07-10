@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Install the web server 'nginx' on the server
 sudo ln -s -f /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo service nginx start
+sudo service nginx restart
