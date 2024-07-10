@@ -20,4 +20,4 @@ backend servers
 EOF
 echo "ENABLED=1" >> /etc/default/haproxy
 sudo systemctl enable haproxy.service
-sudo service haproxy reload
+sudo service haproxy start
