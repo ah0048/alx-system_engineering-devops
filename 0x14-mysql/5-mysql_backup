@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 # generates a MySQL dump and creates a compressed archive out of it.
-
-mysqldump -uroot -p"$1" --all-databases > backup.sql
-tar -czf $(date +%d-%m-%Y).tar.gz backup.sql
+if [ "$#" -ne 1 ]; then
+    echo "Error: You must provide one argument which is the password."
+    exit 1
+fi
+mysqldump -u root -p "$1" --all-databases > backup.sql
+tar -czvf $(date +%d-%m-%Y).tar.gz backup.sql
