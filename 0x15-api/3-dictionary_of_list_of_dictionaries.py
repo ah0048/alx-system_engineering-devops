@@ -7,18 +7,18 @@ import requests
 if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/users"
     users = requests.get(url).json()
-    
+
     # Dictionary to store user data and their tasks
     data = {}
-    
+
     for user in users:
-        userId = user.get('id')
+        id = user.get('id')
         username = user.get('username')
-        
+
         # Fetch tasks for this user
-        url_tasks = f"https://jsonplaceholder.typicode.com/todos?userId={userId}"
+        url_tasks = f"https://jsonplaceholder.typicode.com/todos?userId={id}"
         all_tasks = requests.get(url_tasks).json()
-        
+
         tasks = []
         for task in all_tasks:
             # Modify task dictionary
@@ -28,9 +28,9 @@ if __name__ == "__main__":
                 'completed': task.get('completed'),
             }
             tasks.append(task_data)
-        
+
         # Add tasks to the data dictionary for this user
-        data[userId] = tasks
+        data[id] = tasks
 
     # Write the data to a JSON file
     json_file = 'todo_all_employees.json'
