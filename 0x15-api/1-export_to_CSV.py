@@ -9,7 +9,7 @@ if __name__ == "__main__":
     user_id = argv[1]
     url = f"https://jsonplaceholder.typicode.com/users/{user_id}"
     user = requests.get(url)
-    name = user.json().get("name")
+    name = user.json().get("username")
     total_tasks = 0
     completed_tasks = 0
     user_tasks = []
