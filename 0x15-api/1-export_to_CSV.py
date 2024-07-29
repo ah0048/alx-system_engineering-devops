@@ -18,7 +18,8 @@ if __name__ == "__main__":
     all_tasks = all_tasks.json()
     csv_file = f'{user_id}.csv'
     with open(csv_file, 'w', newline='') as csv_file:
-        csv_writer = csv.writer(csv_file)
+        csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"',
+                                quoting=csv.QUOTE_ALL, lineterminator='\n')
         for task in all_tasks:
             data = {}
             data["user_id"] = user_id
