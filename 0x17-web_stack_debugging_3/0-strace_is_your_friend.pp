@@ -1,6 +1,6 @@
-# Fixing Apache returning a 500 error
+# puppet code to fix web server bug
 
-exec { 'fix error':
-  provider => 'shell',
-  command  => 'sed -i "s/phpp/php/g" /var/www/html/wp-settings.php'
+exec { 'fix phpp typo'
+    provider => 'shell',
+    command => 'sed -i "s/phpp/php/g" /var/www/html/wp-settings.php'
 }
