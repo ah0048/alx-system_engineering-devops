@@ -35,7 +35,7 @@ server {
                 proxy_pass http://0.0.0.0:5003/2-hbnb;
         }
         location /static {
-                alias web_dynamic/static/;
+                alias /home/ubuntu/AirBnB_clone_v4/web_dynamic/static/;
         }
         listen 80 default_server;
         listen [::]:80 default_server;
